@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Express App</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='31' height='30' patternTransform='scale(4) rotate(95)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(218,16.9%,61.8%,1)'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z' transform='translate(0.5,0)' stroke-width='3' stroke='hsla(235,21.1%,21.4%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")    }
+
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    #noAuth {
+      background-color: #3498db;
+    }
+
+    #basicAuth {
+      background-color: #2ecc71;
+    }
+
+    #apiKey {
+      background-color: #f1c40f;
+    }
+
+    #bearerToken {
+      background-color: #e74c3c;
+    }
+
+    .response-area {
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <button type="submit" id="noAuth" onclick="window.location.href='/noAuth'">No Auth</button>
+  <button id="basicAuth" onclick="window.location.href='/basicAuth'">Basic Auth</button>
+  <button id="apiKey" onclick="window.location.href='/apiKey'">API Key</button>
+  <button id="bearerToken" onclick="window.location.href='/bearerToken'">Bearer Token</button>
+
+  <div class="response-area">
+    <p>
+      <%=content%>
+    </p>
+  </div>
+</body>
+
+</html>
